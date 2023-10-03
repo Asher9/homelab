@@ -16,3 +16,4 @@ packer_cache/
 *.iso
 *.box
 *.ova
+*.key
