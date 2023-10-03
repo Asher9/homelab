@@ -1,0 +1,17 @@
+[srv-prod]
+srv-prod-1.local.prox-lab.de
+srv-prod-2.local.prox-lab.de
+srv-prod-3.local.prox-lab.de
+
+[srv-demo]
+srv-demo-1.local.prox-lab.de
+srv-demo-2.local.prox-lab.de
+
+[vm-prod]
+srv-prod-1.local.prox-lab.de
+srv-prod-2.local.prox-lab.de
+srv-prod-3.local.prox-lab.de
+
+[vm-demo]
+srv-demo-1.local.prox-lab.de
+srv-demo-2.local.prox-lab.de

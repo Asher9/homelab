@@ -1,0 +1,24 @@
+- hosts: "{{ hosts }}"
+
+  tasks:
+
+    - name: Get disk usage
+      command: df -h
+      register: disk_usage
+
+    - name: Check disk space available
+      shell: df -h / | awk 'NR==2 {print $5}'
+      register: disk_usage
+
+      # Send Discord message when reboot is required
+    - name: Sending an e-mail
+      community.general.mail:
+        host: "{{ mailhost }}"
+        port: 587
+        username: "{{ mailusername }}"
+        password: "{{ mailpwd }}"
+        to: "{{ mailtouser }}"
+        from: "{{ mailfromuser }}"
+        subject: Ansible-report
+        body: Disk space on {{ inventory_hostname }} is above 80%!"
+      when: disk_usage.stdout[:-1]|int > 80
