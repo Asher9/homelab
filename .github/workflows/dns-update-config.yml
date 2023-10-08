@@ -23,9 +23,9 @@ jobs:
           host: dns-prod-1.local.prox-lab.de
           key: ${{ secrets.SSH_DEV }}
           source: 'dns/dns-prod-1/config/*'
-          target: '/home/dev/dns-prod-1/'
+          target: '/home/dev/dns-prod-1/config/'
           overwrite: true
-          strip_components: 2
+          strip_components: 3
 
       - name: Restart Docker Container
         uses: fifsky/ssh-action@master
