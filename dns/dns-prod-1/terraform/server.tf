@@ -1,3 +1,10 @@
+resource "dns_a_record_set" "srv_mgmt" {
+  zone      = "local.prox-lab.de."
+  name      = "srv-mgmt"
+  addresses = ["192.168.10.23"]
+  ttl       = 3600
+}
+
 # resource "dns_a_record_set" "srv_prod_1" {
 #   zone      = "local.prox-lab.de."
 #   name      = "srv-prod-1"
