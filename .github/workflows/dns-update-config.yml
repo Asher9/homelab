@@ -6,6 +6,7 @@ on:
         - main
       paths:
         - 'dns/dns-prod-1/config/**'
+    workflow_dispatch:
   
 jobs:
   deploy:

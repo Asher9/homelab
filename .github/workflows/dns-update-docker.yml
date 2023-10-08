@@ -1,0 +1,37 @@
+name: Update Docker Compose File
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'dns/dns-prod-1/docker-compose.yaml'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: "self-hosted"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Upload new Docker Compose File
+        uses: appleboy/scp-action@master
+        with:
+          username: dev
+          host: dns-prod-1.local.prox-lab.de
+          key: ${{ secrets.SSH_DEV }}
+          source: './dns/dns-prod-1/docker-compose.yaml'
+          target: '/home/dev/dns-prod-1/'
+
+      - name: Restart Docker Container
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
+            cd dns-prod-1
+            docker compose up -d --force-recreate
+          user: dev
+          host: dns-prod-1.local.prox-lab.de
+          key: ${{ secrets.SSH_DEV }}
+          args: -tt
