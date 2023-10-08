@@ -30,7 +30,7 @@ jobs:
         with:
           command: |
             cd dns-prod-1
-            docker compose restart
+            ls -la
           user: dev
           host: dns-prod-1.local.prox-lab.de
           key: ${{ secrets.SSH_DEV }}
