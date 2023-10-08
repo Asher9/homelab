@@ -24,6 +24,7 @@ jobs:
           key: ${{ secrets.SSH_DEV }}
           source: './dns/dns-prod-1/docker-compose.yaml'
           target: '/home/dev/dns-prod-1/'
+          strip_components: 2
 
       - name: Restart Docker Container
         uses: fifsky/ssh-action@master
