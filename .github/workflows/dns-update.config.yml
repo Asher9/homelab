@@ -34,3 +34,4 @@ jobs:
           command: |
             cd dns-prod-1
             docker compose restart
+          args: "-tt -vvv"
