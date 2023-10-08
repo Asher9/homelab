@@ -22,7 +22,7 @@ jobs:
           username: dev
           host: dns-prod-1.local.prox-lab.de
           key: ${{ secrets.SSH_DEV }}
-          source: './dns/dns-prod-1/docker-compose.yaml'
+          source: 'dns/dns-prod-1/docker-compose.yaml'
           target: '/home/dev/dns-prod-1/'
           strip_components: 2
 
