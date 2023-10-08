@@ -10,4 +10,3 @@ local.prox-lab.de	IN SOA	ns.local.prox-lab.de. info.prox-lab.de. (
 			NS	ns.local.prox-lab.de.
 $ORIGIN local.prox-lab.de.
 ns			A	192.168.10.8
-
