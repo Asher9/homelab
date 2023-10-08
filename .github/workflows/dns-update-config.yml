@@ -22,7 +22,7 @@ jobs:
           username: dev
           host: dns-prod-1.local.prox-lab.de
           key: ${{ secrets.SSH_DEV }}
-          source: 'dns/dns-prod-1/config/*'
+          source: 'dns/dns-prod-1/config/*,!dns/dns-prod-1/config/*.zone'
           target: '/home/dev/dns-prod-1/config/'
           overwrite: true
           strip_components: 3
