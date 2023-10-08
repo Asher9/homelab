@@ -23,7 +23,7 @@ jobs:
           host: dns-prod-1.local.prox-lab.de
           key: ${{ secrets.SSH_DEV }}
           source: 'dns/dns-prod-1/config/*'
-          target: '/home/dev/dns-prod-1/config/'
+          target: '/home/dev/test/*'
           overwrite: true
 
       - name: Restart Docker Container
