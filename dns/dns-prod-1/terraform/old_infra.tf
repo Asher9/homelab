@@ -5,6 +5,13 @@ resource "dns_a_record_set" "game_server" {
   ttl       = 3600
 }
 
+resource "dns_a_record_set" "dashy" {
+  zone      = "local.prox-lab.de."
+  name      = "dashy"
+  addresses = ["192.168.10.21"]
+  ttl       = 3600
+}
+
 resource "dns_a_record_set" "gitlab" {
   zone      = "local.prox-lab.de."
   name      = "gitlab"
