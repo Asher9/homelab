@@ -109,3 +109,45 @@ resource "dns_a_record_set" "wled" {
   addresses = ["192.168.10.21"]
   ttl       = 3600
 }
+
+resource "dns_a_record_set" "semaphore" {
+  zone      = "local.prox-lab.de."
+  name      = "semaphore"
+  addresses = ["192.168.10.21"]
+  ttl       = 3600
+}
+
+resource "dns_a_record_set" "webfiles" {
+  zone      = "local.prox-lab.de."
+  name      = "webfiles"
+  addresses = ["192.168.10.21"]
+  ttl       = 3600
+}
+
+resource "dns_a_record_set" "uptimekuma" {
+  zone      = "local.prox-lab.de."
+  name      = "uptimekuma"
+  addresses = ["192.168.10.21"]
+  ttl       = 3600
+}
+
+resource "dns_a_record_set" "jellyfin" {
+  zone      = "local.prox-lab.de."
+  name      = "jellyfin"
+  addresses = ["192.168.10.21"]
+  ttl       = 3600
+}
+
+resource "dns_a_record_set" "grafana" {
+  zone      = "local.prox-lab.de."
+  name      = "grafana"
+  addresses = ["192.168.10.21"]
+  ttl       = 3600
+}
+
+resource "dns_a_record_set" "prometheus" {
+  zone      = "local.prox-lab.de."
+  name      = "prometheus"
+  addresses = ["192.168.10.21"]
+  ttl       = 3600
+}
