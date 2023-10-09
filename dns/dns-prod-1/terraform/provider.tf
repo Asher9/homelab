@@ -7,6 +7,13 @@ terraform {
       version = "3.3.2"
     }
   }
+  cloud {
+    organization = "prox-lab"
+
+    workspaces {
+      name = "dns-prod-1"
+    }
+  }
 }
 
 variable "TSIG_KEY_HOME" {

@@ -30,22 +30,9 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
-
-      - name: Configure Terraform plugin cache
-        run: |
-          echo 'plugin_cache_dir = "$HOME/.terraform.d/plugin-cache"' > ~/.terraformrc
-          mkdir -p ~/.terraform.d/plugin-cache
-      - name: Cache Terraform
-        uses: actions/cache@v3
         with:
-          path: ~/.terraform.d/plugin-cache
-          key: ${{ runner.os }}-terraform-${{ hashFiles(format('{0}/terraform.tfstate', env.TF_DIR)) }}
-          restore-keys: ${{ runner.os }}-terraform-
-
-      - name: Terraform Format
-        id: fmt
-        run: terraform fmt -check
-        continue-on-error: true
+          # terraform_version: 0.13.0:
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
       - name: Terraform Init
         id: init
