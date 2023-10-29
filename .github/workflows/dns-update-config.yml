@@ -16,34 +16,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Stop Docker Container
-        uses: fifsky/ssh-action@master
-        with:
-          command: |
-            cd dns-prod-1
-            docker compose stop
-          user: dev
-          host: dns-prod-1.local.prox-lab.de
-          key: ${{ secrets.SSH_DEV }}
-          args: -tt
-
       - name: SCP files via ssh key
         uses: appleboy/scp-action@master
         with:
           username: dev
           host: dns-prod-1.local.prox-lab.de
           key: ${{ secrets.SSH_DEV }}
-          source: 'dns/dns-prod-1/config/*'
+          source: 'dns/dns-prod-1/config/*,!dns/dns-prod-1/config/*.zone'
           target: '/home/dev/dns-prod-1/config/'
           overwrite: true
           strip_components: 3
 
-      - name: Start Docker Container
+      - name: Restart Docker Container
         uses: fifsky/ssh-action@master
         with:
           command: |
             cd dns-prod-1
-            docker compose start
+            docker compose restart
           user: dev
           host: dns-prod-1.local.prox-lab.de
           key: ${{ secrets.SSH_DEV }}
