@@ -1,5 +1,5 @@
 resource "dns_a_record_set" "game_server_ssh" {
-  zone      = "ssh.ssh.local.prox-lab.de."
+  zone      = "ssh.local.prox-lab.de."
   name      = "game-server"
   addresses = ["192.168.10.22"]
   ttl       = 3600
@@ -13,14 +13,14 @@ resource "dns_a_record_set" "dns_prod_1_ssh" {
 }
 
 resource "dns_a_record_set" "pi_vpn_ssh" {
-  zone      = "ssh.ssh.local.prox-lab.de."
+  zone      = "ssh.local.prox-lab.de."
   name      = "pi-vpn"
   addresses = ["192.168.10.7"]
   ttl       = 3600
 }
 
 resource "dns_a_record_set" "bitwarden_ssh" {
-  zone      = "ssh.ssh.local.prox-lab.de."
+  zone      = "ssh.local.prox-lab.de."
   name      = "bitwarden"
   addresses = ["192.168.10.10"]
   ttl       = 3600
