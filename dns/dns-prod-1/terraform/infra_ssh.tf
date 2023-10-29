@@ -43,14 +43,14 @@ resource "dns_a_record_set" "homeassistant_ssh" {
 resource "dns_a_record_set" "hyperion_ssh" {
   zone      = "ssh.local.prox-lab.de."
   name      = "hyperion"
-  addresses = ["192.168.10.203"]
+  addresses = ["192.168.70.203"]
   ttl       = 3600
 }
 
 resource "dns_a_record_set" "octoprint_ssh" {
   zone      = "ssh.local.prox-lab.de."
   name      = "octoprint"
-  addresses = ["192.168.10.202"]
+  addresses = ["192.168.70.202"]
   ttl       = 3600
 }
 
