@@ -82,10 +82,3 @@ resource "dns_a_record_set" "truenas" {
   addresses = ["192.168.10.6"]
   ttl       = 3600
 }
-
-resource "dns_a_record_set" "srv_mgmt" {
-  zone      = "local.prox-lab.de."
-  name      = "srv-mgmt"
-  addresses = ["192.168.10.23"]
-  ttl       = 3600
-}
