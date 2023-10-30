@@ -1,106 +1,63 @@
-#resource "dns_a_record_set" "prx_prod_1" {
-#  zone = "local.prox-lab.de."
-#  name = "prx-prod-1"
-#  addresses = [
-#    "192.168.100.10"
-#  ]
-#  ttl = 3600
-#}
-#
-#resource "dns_a_record_set" "nas_prod_1" {
-#  zone = "local.prox-lab.de."
-#  name = "nas-prod-1"
-#  addresses = [
-#    "192.168.10.6"
-#  ]
-#  ttl = 3600
-#}
-#
-#resource "dns_a_record_set" "rtr_prod_1" {
-#  zone = "local.prox-lab.de."
-#  name = "rtr-prod-1"
-#  addresses = [
-#    "192.168.100.1"
-#  ]
-#  ttl = 3600
-#}
-#
-#resource "dns_a_record_set" "sw_prod_1" {
-#  zone = "local.prox-lab.de."
-#  name = "sw-prod-1"
-#  addresses = [
-#    "192.168.100.3"
-#  ]
-#  ttl = 3600
-#}
-#
-#resource "dns_a_record_set" "pihole" {
-#  zone = "local.prox-lab.de."
-#  name = "pihole"
-#  addresses = [
-#    "192.168.10.7"
-#  ]
-#  ttl = 3600
-#}
-resource "dns_a_record_set" "game_server" {
+
+resource "dns_a_record_set" "dns_prod_1" {
   zone      = "local.prox-lab.de."
-  name      = "game-server"
-  addresses = ["192.168.10.21"]
+  name      = "dns-prod-1"
+  addresses = ["192.168.10.8"]
   ttl       = 3600
 }
 
-resource "dns_a_record_set" "dashy" {
+resource "dns_a_record_set" "game_server" {
   zone      = "local.prox-lab.de."
-  name      = "dashy"
-  addresses = ["192.168.10.21"]
+  name      = "game-server"
+  addresses = ["192.168.10.22"]
+  ttl       = 3600
+}
+
+resource "dns_a_record_set" "pi_vpn" {
+  zone      = "local.prox-lab.de."
+  name      = "pi-vpn"
+  addresses = ["192.168.10.7"]
+  ttl       = 3600
+}
+
+resource "dns_a_record_set" "bitwarden" {
+  zone      = "local.prox-lab.de."
+  name      = "bitwarden"
+  addresses = ["192.168.10.10"]
   ttl       = 3600
 }
 
 resource "dns_a_record_set" "gitlab" {
   zone      = "local.prox-lab.de."
   name      = "gitlab"
-  addresses = ["192.168.10.21"]
+  addresses = ["192.168.10.9"]
   ttl       = 3600
 }
 
 resource "dns_a_record_set" "homeassistant" {
   zone      = "local.prox-lab.de."
   name      = "homeassistant"
-  addresses = ["192.168.10.21"]
+  addresses = ["192.168.10.14"]
   ttl       = 3600
 }
 
 resource "dns_a_record_set" "hyperion" {
   zone      = "local.prox-lab.de."
   name      = "hyperion"
-  addresses = ["192.168.10.21"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "netbox" {
-  zone      = "local.prox-lab.de."
-  name      = "netbox"
-  addresses = ["192.168.10.21"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "nextcloud" {
-  zone      = "local.prox-lab.de."
-  name      = "nextcloud"
-  addresses = ["192.168.10.21"]
+  addresses = ["192.168.70.203"]
   ttl       = 3600
 }
 
 resource "dns_a_record_set" "octoprint" {
   zone      = "local.prox-lab.de."
   name      = "octoprint"
-  addresses = ["192.168.10.21"]
+  addresses = ["192.168.70.202"]
   ttl       = 3600
 }
 
-resource "dns_a_record_set" "portainer" {
+resource "dns_a_record_set" "docker" {
   zone      = "local.prox-lab.de."
-  name      = "portainer"
+  name      = "docker"
   addresses = ["192.168.10.21"]
   ttl       = 3600
 }
@@ -108,97 +65,27 @@ resource "dns_a_record_set" "portainer" {
 resource "dns_a_record_set" "proxmox" {
   zone      = "local.prox-lab.de."
   name      = "proxmox"
-  addresses = ["192.168.10.21"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "pterodactyl" {
-  zone      = "local.prox-lab.de."
-  name      = "pterodactyl"
-  addresses = ["192.168.10.21"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "rancher" {
-  zone      = "local.prox-lab.de."
-  name      = "rancher"
-  addresses = ["192.168.10.21"]
+  addresses = ["192.168.100.10"]
   ttl       = 3600
 }
 
 resource "dns_a_record_set" "router" {
   zone      = "local.prox-lab.de."
   name      = "router"
-  addresses = ["192.168.10.21"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "traefik_dashboard" {
-  zone      = "local.prox-lab.de."
-  name      = "traefik-dashboard"
-  addresses = ["192.168.10.21"]
+  addresses = ["192.168.100.1"]
   ttl       = 3600
 }
 
 resource "dns_a_record_set" "truenas" {
   zone      = "local.prox-lab.de."
   name      = "truenas"
-  addresses = ["192.168.10.21"]
+  addresses = ["192.168.10.6"]
   ttl       = 3600
 }
 
-resource "dns_a_record_set" "wled" {
+resource "dns_a_record_set" "srv_mgmt" {
   zone      = "local.prox-lab.de."
-  name      = "wled"
-  addresses = ["192.168.10.21"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "semaphore" {
-  zone      = "local.prox-lab.de."
-  name      = "semaphore"
-  addresses = ["192.168.10.21"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "webfiles" {
-  zone      = "local.prox-lab.de."
-  name      = "webfiles"
-  addresses = ["192.168.10.21"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "uptimekuma" {
-  zone      = "local.prox-lab.de."
-  name      = "uptimekuma"
-  addresses = ["192.168.10.21"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "jellyfin" {
-  zone      = "local.prox-lab.de."
-  name      = "jellyfin"
-  addresses = ["192.168.10.21"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "grafana" {
-  zone      = "local.prox-lab.de."
-  name      = "grafana"
-  addresses = ["192.168.10.21"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "prometheus" {
-  zone      = "local.prox-lab.de."
-  name      = "prometheus"
-  addresses = ["192.168.10.21"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "dns_prod_1" {
-  zone      = "local.prox-lab.de."
-  name      = "dns-prod-1"
-  addresses = ["192.168.10.8"]
+  name      = "srv-mgmt"
+  addresses = ["192.168.10.23"]
   ttl       = 3600
 }
