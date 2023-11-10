@@ -90,13 +90,6 @@ resource "dns_a_record_set" "zaehler" {
   ttl       = 3600
 }
 
-resource "dns_a_record_set" "zaehler" {
-  zone      = "local.prox-lab.de."
-  name      = "zaehler"
-  addresses = ["192.168.70.201"]
-  ttl       = 3600
-}
-
 resource "dns_a_record_set" "steam_cache" {
   zone      = "local.prox-lab.de."
   name      = "steamcache"
