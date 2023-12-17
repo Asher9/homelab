@@ -96,3 +96,10 @@ resource "dns_a_record_set" "steam_cache" {
   addresses = ["192.168.10.24"]
   ttl       = 3600
 }
+
+resource "dns_a_record_set" "zabbix" {
+  zone      = "local.prox-lab.de."
+  name      = "zabbix"
+  addresses = ["192.168.10.16"]
+  ttl       = 3600
+}
