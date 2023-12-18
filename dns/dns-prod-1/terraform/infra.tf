@@ -103,3 +103,10 @@ resource "dns_a_record_set" "zabbix" {
   addresses = ["192.168.10.16"]
   ttl       = 3600
 }
+
+resource "dns_a_record_set" "netdata" {
+  zone      = "local.prox-lab.de."
+  name      = "netdata"
+  addresses = ["192.168.10.17"]
+  ttl       = 3600
+}
