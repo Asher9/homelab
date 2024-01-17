@@ -63,7 +63,7 @@ resource "dns_a_record_set" "gitlab_web" {
   ttl       = 3600
 }
 
-resource "dns_a_record_set" "gitlab_web" {
+resource "dns_a_record_set" "gitlab_web_registry" {
   zone      = "web.local.prox-lab.de."
   name      = "registry.gitlab"
   addresses = ["192.168.10.21"]
