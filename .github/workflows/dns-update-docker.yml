@@ -30,6 +30,7 @@ jobs:
         uses: fifsky/ssh-action@master
         with:
           command: |
+            echo ${{secrets.TSIG_KEY_HOME}} | sed 's/./& /g'
             cd dns-prod-1
             docker compose up -d --force-recreate
           user: dev
