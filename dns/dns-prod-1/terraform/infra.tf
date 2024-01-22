@@ -13,6 +13,13 @@ resource "dns_a_record_set" "game_server" {
   ttl       = 3600
 }
 
+resource "dns_a_record_set" "game_server_2" {
+  zone      = "local.prox-lab.de."
+  name      = "gameserver-2"
+  addresses = ["192.168.10.24"]
+  ttl       = 3600
+}
+
 resource "dns_a_record_set" "pi_vpn" {
   zone      = "local.prox-lab.de."
   name      = "pi-vpn"
