@@ -49,6 +49,13 @@ resource "dns_a_record_set" "game_server_web" {
   ttl       = 3600
 }
 
+resource "dns_a_record_set" "game_server_2_web" {
+  zone      = "web.local.prox-lab.de."
+  name      = "gameserver-2"
+  addresses = ["192.168.10.21"]
+  ttl       = 3600
+}
+
 resource "dns_a_record_set" "dashy_web" {
   zone      = "web.local.prox-lab.de."
   name      = "dashy"
