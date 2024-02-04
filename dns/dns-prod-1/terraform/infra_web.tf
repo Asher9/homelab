@@ -168,6 +168,13 @@ resource "dns_a_record_set" "wled_web" {
   ttl       = 3600
 }
 
+resource "dns_a_record_set" "wled_baum_web" {
+  zone      = "web.local.prox-lab.de."
+  name      = "wled-baum"
+  addresses = ["192.168.10.21"]
+  ttl       = 3600
+}
+
 resource "dns_a_record_set" "semaphore_web" {
   zone      = "web.local.prox-lab.de."
   name      = "semaphore"
