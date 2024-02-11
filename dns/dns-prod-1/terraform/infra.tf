@@ -121,6 +121,6 @@ resource "dns_a_record_set" "netdata" {
 resource "dns_a_record_set" "piwigo" {
   zone      = "local.prox-lab.de."
   name      = "piwigo"
-  addresses = ["192.168.40.31"]
+  addresses = ["192.168.10.30"]
   ttl       = 3600
 }
