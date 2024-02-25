@@ -128,7 +128,7 @@ resource "dns_a_record_set" "proxmox_web" {
 
 resource "dns_a_record_set" "nebular_web" {
   zone      = "web.local.prox-lab.de."
-  name      = "proxmox"
+  name      = "nebular"
   addresses = ["192.168.10.21"]
   ttl       = 3600
 }
