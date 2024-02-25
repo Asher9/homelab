@@ -126,6 +126,13 @@ resource "dns_a_record_set" "proxmox_web" {
   ttl       = 3600
 }
 
+resource "dns_a_record_set" "nebular_web" {
+  zone      = "web.local.prox-lab.de."
+  name      = "proxmox"
+  addresses = ["192.168.10.21"]
+  ttl       = 3600
+}
+
 resource "dns_a_record_set" "pterodactyl_web" {
   zone      = "web.local.prox-lab.de."
   name      = "pterodactyl"
@@ -230,11 +237,3 @@ resource "dns_a_record_set" "netdata_web" {
   addresses = ["192.168.10.21"]
   ttl       = 3600
 }
-
-resource "dns_a_record_set" "piwigo_web" {
-  zone      = "web.local.prox-lab.de."
-  name      = "piwigo"
-  addresses = ["192.168.10.21"]
-  ttl       = 3600
-}
-

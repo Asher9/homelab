@@ -76,6 +76,13 @@ resource "dns_a_record_set" "proxmox" {
   ttl       = 3600
 }
 
+resource "dns_a_record_set" "nebular" {
+  zone      = "local.prox-lab.de."
+  name      = "proxmox"
+  addresses = ["192.168.100.11"]
+  ttl       = 3600
+}
+
 resource "dns_a_record_set" "router" {
   zone      = "local.prox-lab.de."
   name      = "router"
@@ -97,13 +104,6 @@ resource "dns_a_record_set" "zaehler" {
   ttl       = 3600
 }
 
-resource "dns_a_record_set" "steam_cache" {
-  zone      = "local.prox-lab.de."
-  name      = "steamcache"
-  addresses = ["192.168.10.24"]
-  ttl       = 3600
-}
-
 resource "dns_a_record_set" "zabbix" {
   zone      = "local.prox-lab.de."
   name      = "zabbix"
@@ -118,9 +118,3 @@ resource "dns_a_record_set" "netdata" {
   ttl       = 3600
 }
 
-resource "dns_a_record_set" "piwigo" {
-  zone      = "local.prox-lab.de."
-  name      = "piwigo"
-  addresses = ["192.168.10.30"]
-  ttl       = 3600
-}
