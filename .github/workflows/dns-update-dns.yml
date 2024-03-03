@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'dns/dns-prod-1/terraform/*.tf'
+      - 'dns/dns-prod-*/terraform/*.tf'
   # pull_request:
   #   branches:
   #     - main
@@ -13,16 +13,51 @@ on:
   #     - 'dns/dns-prod-1/terraform/*.tf'
   workflow_dispatch:
   
-defaults:
-  run:
-    working-directory: dns/dns-prod-1/terraform
-
 env:
   TF_VAR_TSIG_KEY_HOME: ${{ secrets.TSIG_KEY_HOME }}
 
 jobs:
-  terraform:
+  terraform_dns-prod-1:
     runs-on: "self-hosted"
+    defaults:
+      run:
+        working-directory: dns/dns-prod-1/terraform
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          # terraform_version: 0.13.0:
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+
+      - name: Terraform Init
+        id: init
+        run: terraform init
+      
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        id: plan
+        run: terraform plan
+        continue-on-error: true
+
+      - name: Terraform Plan Status
+        if: steps.plan.outcome == 'failure'
+        run: exit 1
+
+      - name: Terraform Apply
+        if: steps.plan.outcome == 'success'
+        run: terraform apply -auto-approve
+  terraform_dns-prod-2:
+    runs-on: "self-hosted"
+    defaults:
+      run:
+        working-directory: dns/dns-prod-2/terraform
     steps:
 
       - name: Checkout
