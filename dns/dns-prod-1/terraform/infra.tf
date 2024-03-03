@@ -6,6 +6,13 @@ resource "dns_a_record_set" "dns_prod_1" {
   ttl       = 3600
 }
 
+resource "dns_a_record_set" "dns_prod_2" {
+  zone      = "local.prox-lab.de."
+  name      = "dns-prod-2"
+  addresses = ["192.168.10.11"]
+  ttl       = 3600
+}
+
 resource "dns_a_record_set" "game_server" {
   zone      = "local.prox-lab.de."
   name      = "game-server"
