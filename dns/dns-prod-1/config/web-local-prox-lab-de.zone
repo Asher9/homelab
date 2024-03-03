@@ -1,12 +1,12 @@
 $ORIGIN .
 $TTL 86400	; 1 day
-web.local.prox-lab.de	IN SOA	ns.web.local.prox-lab.de. info.prox-lab.de. (
+web.local.prox-lab.de	IN SOA	ns1.web.local.prox-lab.de. info.prox-lab.de. (
 				2001062624 ; serial
 				3600       ; refresh (1 hour)
 				3600       ; retry (1 hour)
 				2419200    ; expire (4 weeks)
 				3600       ; minimum (1 hour)
 				)
-			NS	ns.web.local.prox-lab.de.
+			NS	ns1.web.local.prox-lab.de.
 $ORIGIN web.local.prox-lab.de.
-ns			A	192.168.10.8
+ns1			A	192.168.10.8
