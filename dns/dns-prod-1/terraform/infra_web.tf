@@ -237,3 +237,10 @@ resource "dns_a_record_set" "netdata_web" {
   addresses = ["192.168.10.21"]
   ttl       = 3600
 }
+
+resource "dns_a_record_set" "homer_web" {
+  zone      = "web.local.prox-lab.de."
+  name      = "homer"
+  addresses = ["192.168.10.21"]
+  ttl       = 3600
+}
