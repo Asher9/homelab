@@ -34,11 +34,11 @@
 #  ttl = 3600
 #}
 #
-resource "dns_a_record_set" "pihole" {
-  zone = "web.local.prox-lab.de."
-  name = "pihole"
+resource "dns_a_record_set" "pihole_web" {
+  zone      = "web.local.prox-lab.de."
+  name      = "pihole"
   addresses = ["192.168.10.21"]
-  ttl = 3600
+  ttl       = 3600
 }
 
 resource "dns_a_record_set" "game_server_web" {
