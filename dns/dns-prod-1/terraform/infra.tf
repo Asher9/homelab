@@ -6,10 +6,10 @@ resource "dns_a_record_set" "dns_prod_1" {
   ttl       = 3600
 }
 
-resource "dns_a_record_set" "dns_prod_2" {
+resource "dns_a_record_set" "prometheus" {
   zone      = "local.prox-lab.de."
-  name      = "dns-prod-2"
-  addresses = ["192.168.10.11"]
+  name      = "prometheus"
+  addresses = ["192.168.10.12"]
   ttl       = 3600
 }
 
@@ -110,18 +110,3 @@ resource "dns_a_record_set" "zaehler" {
   addresses = ["192.168.70.201"]
   ttl       = 3600
 }
-
-resource "dns_a_record_set" "zabbix" {
-  zone      = "local.prox-lab.de."
-  name      = "zabbix"
-  addresses = ["192.168.10.16"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "netdata" {
-  zone      = "local.prox-lab.de."
-  name      = "netdata"
-  addresses = ["192.168.10.17"]
-  ttl       = 3600
-}
-
