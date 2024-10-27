@@ -97,13 +97,6 @@ resource "dns_a_record_set" "netbox_web" {
   ttl       = 3600
 }
 
-resource "dns_a_record_set" "nextcloud_web" {
-  zone      = "web.local.prox-lab.de."
-  name      = "nextcloud"
-  addresses = ["192.168.10.21"]
-  ttl       = 3600
-}
-
 resource "dns_a_record_set" "octoprint_web" {
   zone      = "web.local.prox-lab.de."
   name      = "octoprint"
@@ -135,13 +128,6 @@ resource "dns_a_record_set" "nebular_web" {
 resource "dns_a_record_set" "pterodactyl_web" {
   zone      = "web.local.prox-lab.de."
   name      = "pterodactyl"
-  addresses = ["192.168.10.21"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "rancher_web" {
-  zone      = "web.local.prox-lab.de."
-  name      = "rancher"
   addresses = ["192.168.10.21"]
   ttl       = 3600
 }
