@@ -229,3 +229,10 @@ resource "dns_a_record_set" "homer_web" {
   addresses = ["192.168.10.21"]
   ttl       = 3600
 }
+
+resource "dns_a_record_set" "portainer_demo" {
+  zone      = "web.local.prox-lab.de."
+  name      = "portainer-demo"
+  addresses = ["192.168.10.202"]
+  ttl       = 3600
+}
