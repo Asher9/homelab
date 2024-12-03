@@ -110,3 +110,10 @@ resource "dns_a_record_set" "zaehler" {
   addresses = ["192.168.70.201"]
   ttl       = 3600
 }
+
+resource "dns_a_record_set" "zaehler" {
+  zone      = "local.prox-lab.de."
+  name      = "wazuh"
+  addresses = ["192.168.40.21"]
+  ttl       = 3600
+}
