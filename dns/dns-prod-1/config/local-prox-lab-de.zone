@@ -1,12 +1,17 @@
-$ORIGIN .
-$TTL 86400	; 1 day
-local.prox-lab.de	IN SOA	ns1.local.prox-lab.de. info.prox-lab.de. (
-				2081042684 ; serial
-				3600       ; refresh (1 hour)
-				3600       ; retry (1 hour)
-				2419200    ; expire (4 weeks)
-				3600       ; minimum (1 hour)
-				)
-			NS	ns1.local.prox-lab.de.
+$TTL 2d
 $ORIGIN local.prox-lab.de.
+@	IN SOA	ns1.local.prox-lab.de. info.prox-lab.de. (
+				2001062661 ; serial
+				1h       ; refresh
+				15m      ; retry
+				3w       ; expire
+				2h       ; minimum
+				)
+; primary name server
+	IN NS	ns1.local.prox-lab.de.
+; secondary name server
+	IN NS	ns2.local.prox-lab.de.
+; primary name server ip
 ns1			A	192.168.10.8
+; secondary name server ip
+ns2			A	192.168.10.254
