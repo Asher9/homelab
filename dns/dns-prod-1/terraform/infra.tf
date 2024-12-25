@@ -2,7 +2,7 @@
 resource "dns_a_record_set" "dns_prod_1" {
   zone      = "local.prox-lab.de."
   name      = "dns-prod-1"
-  addresses = ["192.168.10.8"]
+  addresses = ["192.168.10.253"]
   ttl       = 3600
 }
 
