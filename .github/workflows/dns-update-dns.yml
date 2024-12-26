@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'dns/dns-prod-*/terraform/*.tf'
+      - 'dns/dns-prod-1/terraform/*.tf'
   workflow_dispatch:
   
 env:

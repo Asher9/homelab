@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'dns/dns-prod-*/docker-compose.yaml'
+      - 'dns/dns-prod-1/docker-compose.yaml'
   workflow_dispatch:
 
 jobs:
