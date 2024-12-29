@@ -117,3 +117,10 @@ resource "dns_a_record_set" "zaehler" {
   addresses = ["192.168.70.201"]
   ttl       = 3600
 }
+
+resource "dns_a_record_set" "wireguard" {
+  zone      = "local.prox-lab.de."
+  name      = "wireguard"
+  addresses = ["192.168.10.8"]
+  ttl       = 3600
+}
