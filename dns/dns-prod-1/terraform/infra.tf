@@ -34,9 +34,9 @@ resource "dns_a_record_set" "game_server_2" {
   ttl       = 3600
 }
 
-resource "dns_a_record_set" "pi_vpn" {
+resource "dns_a_record_set" "pihole" {
   zone      = "local.prox-lab.de."
-  name      = "pi-vpn"
+  name      = "pihole"
   addresses = ["192.168.10.7"]
   ttl       = 3600
 }
