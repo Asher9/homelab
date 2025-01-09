@@ -19,3 +19,9 @@ resource "dns_a_record_set" "wled_baum" {
   ttl       = 3600
 }
 
+resource "dns_a_record_set" "test" {
+  zone      = "local.prox-lab.de."
+  name      = "test"
+  addresses = ["192.168.700.123"]
+  ttl       = 3600
+}
