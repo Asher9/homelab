@@ -19,6 +19,13 @@ resource "dns_a_record_set" "srv_mgmt" {
   ttl       = 3600
 }
 
+resource "dns_a_record_set" "pbs" {
+  zone      = "local.prox-lab.de."
+  name      = "pbs"
+  addresses = ["192.168.10.26"]
+  ttl       = 3600
+}
+
 resource "dns_a_record_set" "dns_prod_1" {
   zone      = "local.prox-lab.de."
   name      = "dns-prod-1"
