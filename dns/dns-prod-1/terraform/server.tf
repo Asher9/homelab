@@ -40,10 +40,10 @@ resource "dns_a_record_set" "dns_prod_2" {
   ttl       = 3600
 }
 
-resource "dns_a_record_set" "octoprint" {
+resource "dns_a_record_set" "prusalink" {
   zone      = "local.prox-lab.de."
-  name      = "octoprint"
-  addresses = ["192.168.70.202"]
+  name      = "prusalink"
+  addresses = ["192.168.70.30"]
   ttl       = 3600
 }
 
