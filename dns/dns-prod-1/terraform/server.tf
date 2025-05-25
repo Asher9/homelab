@@ -67,6 +67,13 @@ resource "dns_a_record_set" "nebular" {
   addresses = ["192.168.100.11"]
   ttl       = 3600
 }
+
+resource "dns_a_record_set" "mailcow" {
+  zone      = "local.prox-lab.de."
+  name      = "mailcow"
+  addresses = ["10.20.20.1"]
+  ttl       = 3600
+}
 # resource "dns_a_record_set" "srv_prod_1" {
 #   zone      = "local.prox-lab.de."
 #   name      = "srv-prod-1"
