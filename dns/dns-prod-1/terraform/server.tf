@@ -12,6 +12,13 @@ resource "dns_a_record_set" "pihole" {
   ttl       = 3600
 }
 
+resource "dns_a_record_set" "wireguard" {
+  zone      = "local.prox-lab.de."
+  name      = "wireguard"
+  addresses = ["192.168.10.8"]
+  ttl       = 3600
+}
+
 resource "dns_a_record_set" "srv_mgmt" {
   zone      = "local.prox-lab.de."
   name      = "srv-mgmt"
