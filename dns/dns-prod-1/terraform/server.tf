@@ -40,6 +40,13 @@ resource "dns_a_record_set" "dns_prod_2" {
   ttl       = 3600
 }
 
+resource "dns_a_record_set" "dns_demo_1" {
+  zone      = "local.prox-lab.de."
+  name      = "dns-demo-1"
+  addresses = ["192.168.10.200"]
+  ttl       = 3600
+}
+
 resource "dns_a_record_set" "prusalink" {
   zone      = "local.prox-lab.de."
   name      = "prusalink"
