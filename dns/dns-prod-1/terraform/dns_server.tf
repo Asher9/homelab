@@ -23,12 +23,7 @@ resource "dns_a_record_set" "dns_prod_2" {
   addresses = ["192.168.10.254"]
   ttl       = 3600
 }
-resource "dns_a_record_set" "ns2" {
-  zone      = "local.prox-lab.de."
-  name      = "ns2"
-  addresses = ["192.168.10.254"]
-  ttl       = 3600
-}
+
 resource "dns_ptr_record" "dns_prod_2_ptr" {
   zone = "10.168.192.in-addr.arpa."
   name = "254"
