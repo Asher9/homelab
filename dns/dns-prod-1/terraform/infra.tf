@@ -11,6 +11,19 @@ resource "dns_ptr_record" "router_ptr" {
   ttl  = 3600
 }
 
+resource "dns_a_record_set" "router_server" {
+  zone      = "local.prox-lab.de."
+  name      = "routerServerGateway"
+  addresses = ["192.168.10.1"]
+  ttl       = 3600
+}
+resource "dns_ptr_record" "router_server_ptr" {
+  zone = "10.168.192.in-addr.arpa."
+  name = "1"
+  ptr  = "routerServerGateway.local.prox-lab.de."
+  ttl  = 3600
+}
+
 resource "dns_a_record_set" "aruba_switch" {
   zone      = "local.prox-lab.de."
   name      = "aruba-switch"
