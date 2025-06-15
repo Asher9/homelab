@@ -4,12 +4,24 @@ resource "dns_a_record_set" "truenas" {
   addresses = ["192.168.10.6"]
   ttl       = 3600
 }
+resource "dns_ptr_record" "truenas_ptr" {
+  zone = "10.168.192.in-addr.arpa."
+  name = "6"
+  ptr  = "truenas.local.prox-lab.de."
+  ttl  = 3600
+}
 
 resource "dns_a_record_set" "pihole" {
   zone      = "local.prox-lab.de."
   name      = "pihole"
   addresses = ["192.168.10.7"]
   ttl       = 3600
+}
+resource "dns_ptr_record" "pihole_ptr" {
+  zone = "10.168.192.in-addr.arpa."
+  name = "7"
+  ptr  = "pihole.local.prox-lab.de."
+  ttl  = 3600
 }
 
 resource "dns_a_record_set" "srv_mgmt" {
@@ -18,12 +30,24 @@ resource "dns_a_record_set" "srv_mgmt" {
   addresses = ["192.168.10.23"]
   ttl       = 3600
 }
+resource "dns_ptr_record" "srv_mgmt_ptr" {
+  zone = "10.168.192.in-addr.arpa."
+  name = "23"
+  ptr  = "srv-mgmt.local.prox-lab.de."
+  ttl  = 3600
+}
 
 resource "dns_a_record_set" "pbs" {
   zone      = "local.prox-lab.de."
   name      = "pbs"
   addresses = ["192.168.10.26"]
   ttl       = 3600
+}
+resource "dns_ptr_record" "pbs_ptr" {
+  zone = "10.168.192.in-addr.arpa."
+  name = "26"
+  ptr  = "pbs.local.prox-lab.de."
+  ttl  = 3600
 }
 
 resource "dns_a_record_set" "dns_prod_1" {
@@ -32,6 +56,12 @@ resource "dns_a_record_set" "dns_prod_1" {
   addresses = ["192.168.10.253"]
   ttl       = 3600
 }
+resource "dns_ptr_record" "dns_prod_1_ptr" {
+  zone = "10.168.192.in-addr.arpa."
+  name = "253"
+  ptr  = "dns-prod-1.local.prox-lab.de."
+  ttl  = 3600
+}
 
 resource "dns_a_record_set" "dns_prod_2" {
   zone      = "local.prox-lab.de."
@@ -39,33 +69,11 @@ resource "dns_a_record_set" "dns_prod_2" {
   addresses = ["192.168.10.254"]
   ttl       = 3600
 }
-
-resource "dns_a_record_set" "prusalink" {
-  zone      = "local.prox-lab.de."
-  name      = "prusalink"
-  addresses = ["192.168.70.30"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "hyperion" {
-  zone      = "local.prox-lab.de."
-  name      = "hyperion"
-  addresses = ["192.168.70.203"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "proxmox" {
-  zone      = "local.prox-lab.de."
-  name      = "proxmox"
-  addresses = ["192.168.100.10"]
-  ttl       = 3600
-}
-
-resource "dns_a_record_set" "nebular" {
-  zone      = "local.prox-lab.de."
-  name      = "nebular"
-  addresses = ["192.168.100.11"]
-  ttl       = 3600
+resource "dns_ptr_record" "dns_prod_2_ptr" {
+  zone = "10.168.192.in-addr.arpa."
+  name = "254"
+  ptr  = "dns-prod-2.local.prox-lab.de."
+  ttl  = 3600
 }
 
 resource "dns_a_record_set" "mailcow" {
@@ -74,59 +82,3 @@ resource "dns_a_record_set" "mailcow" {
   addresses = ["10.20.20.1"]
   ttl       = 3600
 }
-# resource "dns_a_record_set" "srv_prod_1" {
-#   zone      = "local.prox-lab.de."
-#   name      = "srv-prod-1"
-#   addresses = ["10.20.0.2"]
-#   ttl       = 3600
-# }
-# 
-# resource "dns_a_record_set" "srv_prod_1_wildcard" {
-#   zone      = "local.prox-lab.de."
-#   name      = "*.srv-prod-1"
-#   addresses = ["10.20.0.2"]
-#   ttl       = 3600
-# }
-# 
-# resource "dns_a_record_set" "srv_prod_2" {
-#   zone      = "local.prox-lab.de."
-#   name      = "srv-prod-2"
-#   addresses = ["10.20.0.3"]
-#   ttl       = 3600
-# }
-# 
-# resource "dns_a_record_set" "srv_prod_2_wildcard" {
-#   zone      = "local.prox-lab.de."
-#   name      = "*.srv-prod-2"
-#   addresses = ["10.20.0.3"]
-#   ttl       = 3600
-# }
-# 
-# resource "dns_a_record_set" "srv_prod_3" {
-#   zone      = "local.prox-lab.de."
-#   name      = "srv-prod-3"
-#   addresses = ["10.20.0.15"]
-#   ttl       = 3600
-# }
-# 
-# 
-# resource "dns_a_record_set" "srv_demo_1" {
-#   zone      = "local.prox-lab.de."
-#   name      = "srv-demo-1"
-#   addresses = ["10.20.3.1"]
-#   ttl       = 3600
-# }
-# 
-# resource "dns_a_record_set" "srv_demo_1_wildcard" {
-#   zone      = "local.prox-lab.de."
-#   name      = "*.srv-demo-1"
-#   addresses = ["10.20.3.1"]
-#   ttl       = 3600
-# }
-# 
-# resource "dns_a_record_set" "srv_demo_2" {
-#   zone      = "local.prox-lab.de."
-#   name      = "srv-demo-2"
-#   addresses = ["10.20.3.4"]
-#   ttl       = 3600
-# }

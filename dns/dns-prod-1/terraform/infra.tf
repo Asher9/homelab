@@ -4,7 +4,6 @@ resource "dns_a_record_set" "router" {
   addresses = ["192.168.100.1"]
   ttl       = 3600
 }
-
 resource "dns_ptr_record" "router_ptr" {
   zone = "100.168.192.in-addr.arpa."
   name = "1"
@@ -18,7 +17,6 @@ resource "dns_a_record_set" "aruba_switch" {
   addresses = ["192.168.100.2"]
   ttl       = 3600
 }
-
 resource "dns_ptr_record" "aruba_switch_ptr" {
   zone = "100.168.192.in-addr.arpa."
   name = "2"
@@ -32,7 +30,6 @@ resource "dns_a_record_set" "aruba_ap_master" {
   addresses = ["192.168.100.4"]
   ttl       = 3600
 }
-
 resource "dns_ptr_record" "aruba_ap_master_ptr" {
   zone = "100.168.192.in-addr.arpa."
   name = "4"
@@ -46,10 +43,35 @@ resource "dns_a_record_set" "aruba_ap_slave" {
   addresses = ["192.168.100.5"]
   ttl       = 3600
 }
-
 resource "dns_ptr_record" "aruba_ap_slave_ptr" {
   zone = "100.168.192.in-addr.arpa."
   name = "5"
   ptr  = "aruba-ap-slave.local.prox-lab.de."
+  ttl  = 3600
+}
+
+resource "dns_a_record_set" "proxmox" {
+  zone      = "local.prox-lab.de."
+  name      = "proxmox"
+  addresses = ["192.168.100.10"]
+  ttl       = 3600
+}
+resource "dns_ptr_record" "proxmox_ptr" {
+  zone = "100.168.192.in-addr.arpa."
+  name = "10"
+  ptr  = "proxmox.local.prox-lab.de."
+  ttl  = 3600
+}
+
+resource "dns_a_record_set" "nebular" {
+  zone      = "local.prox-lab.de."
+  name      = "nebular"
+  addresses = ["192.168.100.11"]
+  ttl       = 3600
+}
+resource "dns_ptr_record" "nebular_ptr" {
+  zone = "100.168.192.in-addr.arpa."
+  name = "11"
+  ptr  = "nebular.local.prox-lab.de."
   ttl  = 3600
 }
