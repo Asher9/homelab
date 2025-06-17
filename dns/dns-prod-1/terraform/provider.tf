@@ -4,14 +4,14 @@ terraform {
   required_providers {
     dns = {
       source  = "hashicorp/dns"
-      version = "3.4.2"
+      version = "3.4.3"
     }
   }
   cloud {
     organization = "prox-lab"
 
     workspaces {
-      name = "dns-prod-1"
+      name = "dnsServers"
     }
   }
 }
